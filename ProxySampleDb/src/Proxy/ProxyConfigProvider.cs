@@ -18,11 +18,6 @@ namespace Proxy
 
         public IProxyConfig GetConfig()
         {
-            return LoadProxyConfig();
-        }
-
-        private ProxyConfig LoadProxyConfig()
-        {
             var proxyData = _connection.Get("ReverseProxy");
 
             JObject jsonData = JObject.Parse(proxyData);
